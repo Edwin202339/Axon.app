@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #4B6FFF;
+  --text-color: #333;
+  --background-color: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Poppins', 'Space Grotesk', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-content {
+  padding: 2rem;
+}

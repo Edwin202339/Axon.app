@@ -1,0 +1,253 @@
+.about-section {
+  padding: 120px 0;
+  background-color: #050505;
+  color: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-title h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4361ee, #3a86ff);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Efectos de aparición al hacer scroll (simplificados para evitar problemas) */
+.about-content,
+.mission-vision,
+.values-section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+
+.about-image {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.03);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #e0e0e0;
+}
+
+.mission-vision {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.mv-card {
+  flex: 1;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo específico para la tarjeta de Misión */
+.mv-card:first-child {
+  background: linear-gradient(135deg, #4361ee 0%, #3a86ff 100%);
+  color: white;
+}
+
+/* Estilo específico para la tarjeta de Visión */
+.mv-card:last-child {
+  background-color: #141414;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mv-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.mv-card .icon {
+  font-size: 38px;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-align: left;
+  width: auto;
+}
+
+.mv-card:first-child .icon {
+  color: white;
+}
+
+.mv-card:last-child .icon {
+  color: #3a86ff;
+}
+
+.mv-card h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.mv-card p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.values-section {
+  text-align: center;
+}
+
+.values-section h2 {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 60px;
+}
+
+.value-card {
+  background-color: #141414;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(58, 134, 255, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.value-card .icon {
+  font-size: 40px;
+  color: #3a86ff;
+  margin-bottom: 25px;
+  display: inline-block;
+  text-align: left;
+  margin-left: 0;
+  width: auto;
+}
+
+.value-card:nth-child(1) .icon {
+  color: #4361ee;
+}
+
+.value-card:nth-child(2) .icon {
+  color: #3a86ff;
+}
+
+.value-card:nth-child(3) .icon {
+  color: #48bfe3;
+}
+
+.value-card:nth-child(4) .icon {
+  color: #4cc9f0;
+}
+
+.value-card:nth-child(5) .icon {
+  color: #4895ef;
+}
+
+.value-card:nth-child(6) .icon {
+  color: #3f37c9;
+}
+
+.value-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.value-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-vision {
+    flex-direction: column;
+  }
+  
+  .section-title h2 {
+    font-size: 36px;
+  }
+  
+  .about-text p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+  }
+}

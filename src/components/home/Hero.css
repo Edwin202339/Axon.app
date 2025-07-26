@@ -1,0 +1,120 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10; /* Above background elements */
+  max-width: 900px;
+  padding: 2rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content .btn {
+  display: inline-block;
+  background-color: #4C6FFF;
+  color: white;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: none;
+  box-shadow: 0 8px 30px rgba(76, 111, 255, 0.3);
+}
+
+.hero-content .btn:hover {
+  background-color: #3a5ce4;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(76, 111, 255, 0.45);
+}
+
+/* Animations */
+.hero-content h1,
+.hero-content p,
+.hero-content .btn {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content h1 {
+  animation-delay: 0.3s;
+}
+
+.hero-content p {
+  animation-delay: 0.6s;
+}
+
+.hero-content .btn {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 3.8rem;
+  }
+  .hero-content p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .hero-content .btn {
+    padding: 0.9rem 2rem;
+  }
+}
