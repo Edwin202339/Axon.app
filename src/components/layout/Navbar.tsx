@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import logo from '../../assets/axon-logo.svg';
+import './Navbar.css';
 
 const navigation = [
   { name: 'Inicio', href: '/' },
@@ -31,63 +32,39 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header style={{
-      position: 'fixed',
-      top: 0,
-      width: '100%',
-      zIndex: 50,
-      transition: 'all 0.3s',
-      backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
-      boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none',
-      backdropFilter: scrolled ? 'blur(8px)' : 'none'
-    }}>
-      <nav className="container-custom" style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 0'}} aria-label="Global">
-        <div style={{display: 'flex', flex: '1'}}>
-          <Link to="/" style={{margin: '-0.375rem', padding: '0.375rem', display: 'flex', alignItems: 'center'}}>
-            <img style={{height: '2rem'}} src={logo} alt="Axon.app" />
-            <span style={{marginLeft: '0.5rem', fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--color-dark)'}}>Axon.app</span>
+    <header className={`header-fixed ${scrolled ? 'header-scrolled' : ''}`}>
+      <nav className="container-custom navbar-container" aria-label="Global">
+        <div className="navbar-logo-container">
+          <Link to="/" className="navbar-logo-link">
+            <img className="navbar-logo" src={logo} alt="Axon.app" />
+            <span className="navbar-logo-text">Axon.app</span>
           </Link>
         </div>
-        <div style={{display: 'flex', '@media (min-width: 1024px)': {display: 'none'}}}>
+        <div className="navbar-mobile-menu">
           <button
             type="button"
-            style={{
-              margin: '-0.625rem', 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              justifyContent: 'center', 
-              borderRadius: '0.375rem', 
-              padding: '0.625rem',
-              color: 'var(--color-dark)'
-            }}
+            className="navbar-mobile-button"
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span style={{position: 'absolute', width: '1px', height: '1px', padding: '0', margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: '0'}}>Abrir menú principal</span>
+            <span className="sr-only">Abrir menú principal</span>
             <Bars3Icon style={{height: '1.5rem', width: '1.5rem'}} aria-hidden="true" />
           </button>
         </div>
-        <div style={{display: 'none', '@media (min-width: 1024px)': {display: 'flex', gap: '2rem'}}}>
+        <div className="navbar-links">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              style={{
-                fontSize: '0.875rem', 
-                fontWeight: '600', 
-                lineHeight: '1.5rem', 
-                color: 'var(--color-dark)',
-                transition: 'color 0.2s'
-              }}
+              className="navbar-link"
             >
               {item.name}
             </Link>
           ))}
         </div>
-        <div style={{display: 'none', '@media (min-width: 1024px)': {display: 'flex', flex: 1, justifyContent: 'flex-end'}}}>
+        <div className="navbar-cta-container">
           <Link
             to="/contact"
-            className="btn btn-primary"
-            style={{fontSize: '0.875rem', fontWeight: '600'}}
+            className="btn btn-primary navbar-cta"
           >
             Contáctanos
           </Link>
