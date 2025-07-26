@@ -76,10 +76,24 @@ Axon.app/
    - Creado Footer.tsx para el pie de página
    - Creado logo en SVG
 
+## 26/07/2025 - Configuración de Enrutamiento y GitHub Pages
+
+1. **Configuración para GitHub Pages**
+   - Añadido script de despliegue en package.json
+   - Configurado base URL en vite.config.ts
+   - Adaptado Router para trabajar con GitHub Pages
+
+2. **Configuración de Enrutamiento**
+   - Implementado React Router DOM
+   - Creado MainLayout para estructura común de páginas
+   - Configuradas rutas básicas en App.tsx
+
+3. **Creación de Página Principal**
+   - Desarrollada página de inicio con secciones Hero, Servicios y CTA
+   - Añadidas animaciones con Framer Motion
+
 ## Por Desarrollar
-- Componentes de páginas principales (Home, Services, Projects, About, Contact)
-- Configuración de rutas con React Router
+- Páginas adicionales (Services, Projects, About, Contact)
 - Implementación de temas claro/oscuro
-- Configuración para despliegue en GitHub Pages
 - Optimización de imágenes y recursos
 - Integración de formularios de contacto
