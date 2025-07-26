@@ -92,6 +92,17 @@ Axon.app/
    - Desarrollada página de inicio con secciones Hero, Servicios y CTA
    - Añadidas animaciones con Framer Motion
 
+## 26/07/2025 - Mejoras en la Configuración de Desarrollo
+
+1. **Mejora del Entorno de Desarrollo**
+   - Configurado el servidor de desarrollo para iniciar automáticamente el navegador con `--open`
+   - Actualizado vite.config.ts con configuraciones de servidor mejoradas
+   - Configurado puerto 3000 para el servidor de desarrollo
+   - Habilitada la visualización de errores HMR en tiempo real
+
+2. **Correcciones de Dependencias**
+   - Actualizada la configuración de PostCSS para usar correctamente @tailwindcss/postcss
+
 ## Por Desarrollar
 - Páginas adicionales (Services, Projects, About, Contact)
 - Implementación de temas claro/oscuro
