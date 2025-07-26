@@ -63,37 +63,37 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-light dark:bg-dark">
-      <div className="container-custom py-12 md:py-16">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8">
-            <div className="flex items-center">
+    <footer style={{backgroundColor: 'var(--color-light)'}}>
+      <div className="container-custom" style={{paddingTop: '3rem', paddingBottom: '4rem'}}>
+        <div style={{display: 'grid', gridTemplateColumns: '1fr', gap: '2rem'}}>
+          <div style={{display: 'flex', flexDirection: 'column', gap: '2rem'}}>
+            <div style={{display: 'flex', alignItems: 'center'}}>
               <img
-                className="h-10"
+                style={{height: '2.5rem'}}
                 src={logo}
                 alt="Axon.app Logo"
               />
-              <span className="ml-3 text-2xl font-bold text-dark dark:text-white">Axon.app</span>
+              <span style={{marginLeft: '0.75rem', fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-dark)'}}>Axon.app</span>
             </div>
-            <p className="text-base text-gray-600 dark:text-gray-400 max-w-sm">
+            <p style={{fontSize: '1rem', color: '#4b5563', maxWidth: '24rem'}}>
               Empresa de desarrollo de aplicaciones, páginas y automatización de procesos. Ofrecemos soluciones tecnológicas de alta calidad.
             </p>
-            <div className="flex space-x-6">
+            <div style={{display: 'flex', gap: '1.5rem'}}>
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors">
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                <a key={item.name} href={item.href} style={{color: '#6b7280', transition: 'color 0.2s'}}>
+                  <span style={{position: 'absolute', width: '1px', height: '1px', padding: '0', margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: '0'}}>{item.name}</span>
+                  <item.icon style={{height: '1.5rem', width: '1.5rem'}} aria-hidden="true" />
                 </a>
               ))}
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+          <div style={{marginTop: '3rem', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem'}}>
             <div>
-              <h3 className="text-sm font-semibold text-dark dark:text-white">Navegación</h3>
-              <ul className="mt-4 space-y-4">
+              <h3 style={{fontSize: '0.875rem', fontWeight: '600', color: 'var(--color-dark)'}}>Navegación</h3>
+              <ul style={{marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {navigation.main.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.href} className="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                    <Link to={item.href} style={{fontSize: '1rem', color: '#4b5563', transition: 'color 0.2s'}}>
                       {item.name}
                     </Link>
                   </li>
@@ -101,25 +101,25 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-dark dark:text-white">Contacto</h3>
-              <ul className="mt-4 space-y-4">
+              <h3 style={{fontSize: '0.875rem', fontWeight: '600', color: 'var(--color-dark)'}}>Contacto</h3>
+              <ul style={{marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 <li>
-                  <a href="mailto:info@axon.app" className="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                  <a href="mailto:info@axon.app" style={{fontSize: '1rem', color: '#4b5563', transition: 'color 0.2s'}}>
                     info@axon.app
                   </a>
                 </li>
-                <li className="text-base text-gray-600 dark:text-gray-400">
+                <li style={{fontSize: '1rem', color: '#4b5563'}}>
                   +123 456 7890
                 </li>
-                <li className="text-base text-gray-600 dark:text-gray-400">
+                <li style={{fontSize: '1rem', color: '#4b5563'}}>
                   Calle Principal #123, Ciudad
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
-          <p className="text-base text-gray-500 dark:text-gray-400 text-center">
+        <div style={{marginTop: '3rem', borderTopWidth: '1px', borderColor: '#e5e7eb', paddingTop: '2rem'}}>
+          <p style={{fontSize: '1rem', color: '#6b7280', textAlign: 'center'}}>
             &copy; {new Date().getFullYear()} Axon.app. Todos los derechos reservados.
           </p>
         </div>

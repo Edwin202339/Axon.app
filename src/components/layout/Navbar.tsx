@@ -31,41 +31,63 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md' : 'bg-transparent'
-    }`}>
-      <nav className="container-custom flex items-center justify-between py-4" aria-label="Global">
-        <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5 flex items-center">
-            <img className="h-8 w-auto" src={logo} alt="Axon.app" />
-            <span className="ml-2 text-xl font-bold text-dark dark:text-white">Axon.app</span>
+    <header style={{
+      position: 'fixed',
+      top: 0,
+      width: '100%',
+      zIndex: 50,
+      transition: 'all 0.3s',
+      backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
+      boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none',
+      backdropFilter: scrolled ? 'blur(8px)' : 'none'
+    }}>
+      <nav className="container-custom" style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 0'}} aria-label="Global">
+        <div style={{display: 'flex', flex: '1'}}>
+          <Link to="/" style={{margin: '-0.375rem', padding: '0.375rem', display: 'flex', alignItems: 'center'}}>
+            <img style={{height: '2rem'}} src={logo} alt="Axon.app" />
+            <span style={{marginLeft: '0.5rem', fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--color-dark)'}}>Axon.app</span>
           </Link>
         </div>
-        <div className="flex lg:hidden">
+        <div style={{display: 'flex', '@media (min-width: 1024px)': {display: 'none'}}}>
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-dark dark:text-white"
+            style={{
+              margin: '-0.625rem', 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              borderRadius: '0.375rem', 
+              padding: '0.625rem',
+              color: 'var(--color-dark)'
+            }}
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span className="sr-only">Abrir menú principal</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <span style={{position: 'absolute', width: '1px', height: '1px', padding: '0', margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: '0'}}>Abrir menú principal</span>
+            <Bars3Icon style={{height: '1.5rem', width: '1.5rem'}} aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div style={{display: 'none', '@media (min-width: 1024px)': {display: 'flex', gap: '2rem'}}}>
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className="text-sm font-semibold leading-6 text-dark dark:text-white hover:text-primary transition-colors"
+              style={{
+                fontSize: '0.875rem', 
+                fontWeight: '600', 
+                lineHeight: '1.5rem', 
+                color: 'var(--color-dark)',
+                transition: 'color 0.2s'
+              }}
             >
               {item.name}
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div style={{display: 'none', '@media (min-width: 1024px)': {display: 'flex', flex: 1, justifyContent: 'flex-end'}}}>
           <Link
             to="/contact"
-            className="btn btn-primary text-sm font-semibold"
+            className="btn btn-primary"
+            style={{fontSize: '0.875rem', fontWeight: '600'}}
           >
             Contáctanos
           </Link>
